@@ -2,18 +2,19 @@ package com.example.desafio.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
- * Indicador Entity
+ * Indicador
  *
  * @author Néstor Valdés
  * @version 1.0
  * @since 2021-02-15
  */
+@ApiModel(description="Detalle sobre el Indicador")
 public class Indicador {
 
-
-	
-	
 	public Indicador(String version, String autor, String codigo, String nombre, String unidadMedida, Serie[] serie) {
 		super();
 		this.version = version;
@@ -25,17 +26,19 @@ public class Indicador {
 	}
 
 	public Indicador() {}
+	
+	@ApiModelProperty(notes="numero de versión")
 	private String version;
 
-
+	@ApiModelProperty(notes="nombre del autor")
 	private String autor;
-
+	@ApiModelProperty(notes="código indicador")
 	private String codigo;
-
+	@ApiModelProperty(notes="nombre indicador")
 	private String nombre;
-
+	@ApiModelProperty(notes="unidad de medida del indicador")
 	private String unidadMedida;
-
+	@ApiModelProperty(notes="arreglo que presenta la fecha y el valor")
 	private Serie[] serie;
 
 	@JsonProperty("version")
